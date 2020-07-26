@@ -27,9 +27,9 @@
                                             <th scope="row"> <?= $i; ?></th>
                                             <td><?= $r['role']; ?></td>
                                             <td>
-                                                <a href="<?= base_url('admin/roleaccess') . $r['id']; ?>" class="badge badge-success" data-toggle="modal" data-target="#menuedit">Akses</a>
+                                                <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="badge badge-success">Akses</a>
                                                 <a href="" class="badge badge-primary" data-toggle="modal" data-target="#menuedit">Edit</a>
-                                                <a href="<?= base_url() ?>menu/hapus/<?= $r['id'] ?>" class="badge badge-danger">Delete</a>
+                                                <a href="<?= base_url('admin/rolehapus/') . $r['id'] ?>" class="badge badge-danger">Delete</a>
                                             </td>
                                         </tr>
                                         <?php $i++; ?>
@@ -46,42 +46,21 @@
                 <!-- End of Main Content -->
 
                 <!-- Modal -->
-                <div class="modal hide fade" id="menuedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="myLabel">Edit Menu</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                <h4 class="modal-title" id="myModalLabel"></h4>
-                            </div>
-                            <form action="<?= base_url(); ?>menu/ubah/<?= $r['id'] ?>" method="POST">
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="menu" name="menu" value="<?= $m['menu']; ?>">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
                 <!-- Button trigger modal -->
                 <!-- Modal -->
                 <div class="modal fade" id="rolebaru" tabindex="-1" role="dialog" aria-labelledby="myLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="myLabel">Tambah Menu Baru</h5>
+                                <h5 class="modal-title" id="myLabel">Ubah Role</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="<?= base_url('menu'); ?>" method="POST">
+                            <form action="<?= base_url('admin/role'); ?>" method="POST">
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="menu" name="menu" placeholder="Masukan Menu Baru">
+                                        <input type="text" class="form-control" id="role" name="role" placeholder="Masukan Menu Baru">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
